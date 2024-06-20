@@ -10,6 +10,9 @@ const storage = multer.diskStorage({
   destination: './uploads',
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' + file.originalname)
+  },
+  limits: {
+    fieldSize: 16777216
   }
 });
 
